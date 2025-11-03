@@ -1547,13 +1547,11 @@
         <module>core-server</module>
         <module>core-client</module>
 
-<!--
         <module>ext</module>
         <module>incubator</module>
         <module>inject</module>
         <module>media</module>
         <module>security</module>
--->
     </modules>
 
     <dependencyManagement>

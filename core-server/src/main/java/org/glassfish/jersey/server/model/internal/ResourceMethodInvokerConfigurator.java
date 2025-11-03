@@ -18,10 +18,10 @@ package org.glassfish.jersey.server.model.internal;
 
 import java.util.Arrays;
 import java.util.List;
-
 import org.glassfish.jersey.internal.BootstrapBag;
 import org.glassfish.jersey.internal.BootstrapConfigurator;
 import org.glassfish.jersey.internal.inject.InjectionManager;
+import org.glassfish.jersey.internal.inject.Providers;
 import org.glassfish.jersey.server.ServerBootstrapBag;
 import org.glassfish.jersey.server.internal.inject.ConfiguredValidator;
 import org.glassfish.jersey.server.model.ResourceMethodInvoker;
@@ -45,6 +45,8 @@ public class ResourceMethodInvokerConfigurator implements BootstrapConfigurator 
         List<ResourceMethodDispatcher.Provider> providers = Arrays.asList(
                 new VoidVoidDispatcherProvider(serverBag.getResourceContext()),
                 new JavaResourceMethodDispatcherProvider(serverBag.getValueParamProviders()));
+
+        providers.addAll(Providers.getProviders(injectionManager, ResourceMethodDispatcher.Provider.class));
 
         ResourceMethodInvoker.Builder builder = new ResourceMethodInvoker.Builder()
                 .injectionManager(injectionManager)

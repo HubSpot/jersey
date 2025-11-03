@@ -213,7 +213,7 @@
         </license>
     </licenses>
 
-    <scm>    
+    <scm>
         <connection>scm:git:git@github.com:jersey/jersey.git</connection>
         <developerConnection>scm:git:git@github.com:eclipse-ee4j/jersey.git</developerConnection>
         <url>https://github.com/eclipse-ee4j/jersey</url>
@@ -1547,11 +1547,13 @@
         <module>core-server</module>
         <module>core-client</module>
 
+<!--
         <module>ext</module>
         <module>incubator</module>
         <module>inject</module>
         <module>media</module>
         <module>security</module>
+-->
     </modules>
 
     <dependencyManagement>
@@ -2118,7 +2120,7 @@
                 <artifactId>yasson</artifactId>
                 <version>${yasson.version}</version>
             </dependency>
-            
+
             <dependency>
                <groupId>com.google.code.gson</groupId>
                <artifactId>gson</artifactId>

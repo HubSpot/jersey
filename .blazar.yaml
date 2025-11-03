@@ -2,6 +2,6 @@ buildpack:
   name: Blazar-Buildpack-Java-oss-fork
 
 env:
-  MAVEN_BUILD_ARGS: "-DskipTests"
+  MAVEN_BUILD_ARGS: "-DskipTests -Dmaven.javadoc.skip -Dexamples.excluded -Dtests.excluded"
   SET_VERSION_OVERRIDE: "2.48-$GIT_BRANCH-SNAPSHOT"
 
